@@ -1,0 +1,18 @@
+[
+  {
+    "id": "asdsad",
+    "title": "Sandia sugar baby",
+    "price": 150,
+    "description": "Pequeña y jugosa",
+    "img": "https://http2.mlstatic.com/D_NQ_NP_787114-MLA44075879571_112020-O.jpg",
+    "descriptionExtendida":"La sandia mas pequeña que se puede cultivar, maximo se consigue por un peso de 2kg. Super dulce"
+  },
+  {
+    "id": "mmfsd",
+    "title": "Melon tigre",
+    "price": 150,
+    "description": "Faciles de cultivar",
+    "img": "https://www.seeds-gallery.shop/8774-large_default/semillas-de-melon-tigre-tigger-melon.jpg",
+    "descriptionExtendida":"Pequeños melones con tamaño de una naranja, con un sabor identico a los que tienen un tamaño mucho mayor pero mucha mas rapida su cosecha y cuidados"
+  }
+]
