@@ -48,4 +48,6 @@ div[role="progressbar"] {
 	top: 50%;
 	left: 50%;
 }
+
+@import "~bootstrap/dist/css/bootstrap.css";
 </style>

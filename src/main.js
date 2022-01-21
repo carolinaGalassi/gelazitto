@@ -4,6 +4,7 @@ import router from "./router/index";
 import vuetify from "./plugins/vuetify";
 import store from "./store";
 import { priceFormat } from "./utils/formaterFunctions";
+import "bootstrap";
 
 Vue.config.productionTip = false;
 

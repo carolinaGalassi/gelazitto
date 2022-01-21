@@ -1,6 +1,6 @@
 <template>
-	<div v-if="show" class="modal-container" role="'dialog'" tabindex="-1">
-		<div class="modal-content">
+	<div v-if="show" class="modal-container1" role="'dialog'" tabindex="-1">
+		<div class="modal-content1">
 			<div class="modal-content2">
 				<slot></slot>
 			</div>
@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style scoped>
-.modal-container {
+.modal-container1 {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -41,7 +41,7 @@ export default {
 	}
 }
 
-.modal-content {
+.modal-content1 {
 	background-color: #fefefe;
 	margin: 15% auto;
 	padding: 1em;

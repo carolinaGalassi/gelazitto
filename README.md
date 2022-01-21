@@ -1,24 +1,32 @@
-# gelazito
+# Gelazitto :icecream:
 
-## Project setup
-```
-npm install
-```
+> Tienda virtual falsa para hacer pedidos de helados que cuenta con dos tipos de usuario diferentes: Admin y Usuario
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### Deploy
 
-### Compiles and minifies for production
-```
-npm run build
-```
+[https://gelazitto-5u09vxvzv-carolinagalassi.vercel.app/][df1]
 
-### Lints and fixes files
-```
-npm run lint
-```
+### Levantar gelazitto local
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Clonar el repositorio
+- En la terminal colocar npm i
+- npm run serve
+
+## Composicion
+
+- Vuex con modulos
+- Localstorage para guardar el carrito
+- Guardas para proteger ciertas rutas de accesos no permitidos
+- Mi propia libreria de componentes totalmente customizados y a medida
+- Reutilizacion de componentes
+- Comunicacion entre componentes asc y desc
+- Ruta defaull e hijas
+- Dos perfiles, administrador y usuario
+- Vuetify y Bootstrap
+
+## Contacto
+
+Linkedin
+https://www.linkedin.com/in/carolina-galassi-borba
+Mail
+galassi.carolina@gmail.com
