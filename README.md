@@ -4,7 +4,7 @@
 
 ### Deploy
 
-[https://gelazitto-5u09vxvzv-carolinagalassi.vercel.app/][df1]
+[https://gelazitto.vercel.app/][df1]
 
 ### Levantar gelazitto local
 

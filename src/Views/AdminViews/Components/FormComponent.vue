@@ -118,7 +118,6 @@ export default {
 	methods: {
 		onSubmit(e) {
 			e.preventDefault();
-			console.log(this.$refs.userForm.validate());
 			if (!this.$refs.userForm.validate()) return;
 
 			const newProduct = {

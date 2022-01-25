@@ -22,7 +22,7 @@ export default {
 		...mapState({
 			snackbar: (state) => state.snackbarModule,
 		}),
-	}, //lala
+	},
 };
 </script>
 

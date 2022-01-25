@@ -91,8 +91,11 @@ export default {
 			return this.stateIsCreated(order.state)
 				? `Hola! Tu pedido nro ${order.id} ha sido confirmado. Si elegiste retirarlo en la oficina, se te avisara cuando esta disponible. Pero si por el contrario, decidiste recibirlo via envio, se te notificara cuando esta en manos del correo y te adjuntaremos el codigo de seguimiento correspondiente`
 				: order.modoDeEnvio === "Retiro"
-				? "Hola! Ya retiraste tu pedido, ¡Que lo disfrutes!"
-				: "Hola! Tu pedido nro ${order.id} ha sido enviado. Y su numero de seguimiento es ${order.idSeguimiento}";
+				? `Hola! Ya retiraste tu pedido,
+				 ¡Que lo disfrutes!`
+				: `Hola! Tu pedido nro ${order.id} ha sido enviado.
+				Su numero de seguimiento es ${order.idSeguimiento}.
+				¡Muchas gracias por confiar en nosotros!`;
 		},
 		getState(order) {
 			if (this.stateIsCreated(order.state)) return "Confirmado";
@@ -119,15 +122,15 @@ export default {
 						title: "Estado actualizado",
 					});
 
-					// axios.post("https://api.emailjs.com/api/v1.0/email/send", {
-					// 	service_id: "service_zzc8nol",
-					// 	template_id: "template_lmwer5c",
-					// 	user_id: "user_KmWcnJHeavijxySiXPABM",
-					// 	template_params: {
-					// 		email: "galassi.carolina@gmail.com",
-					// 		message: this.sendMessage(order),
-					// 	},
-					// });
+					axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+						service_id: "service_zzc8nol",
+						template_id: "template_lmwer5c",
+						user_id: "user_KmWcnJHeavijxySiXPABM",
+						template_params: {
+							email: order.mail,
+							message: this.sendMessage(order),
+						},
+					});
 				})
 				.then(() => (this.loading = false));
 		},

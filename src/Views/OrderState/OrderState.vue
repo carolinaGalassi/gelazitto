@@ -1,33 +1,37 @@
 <template>
-	<section class="order-container">
-		<v-progress-circular v-if="loading" indeterminate color="primary" />
-		<div v-else>
-			<NotFound
-				v-if="notFound"
-				text="¡Upps! Tuvimos un problema, consultá mas tarde"
-			/>
-			<div class="data-container" v-else>
-				<div class="lala">
-					<h1>Pedido n# {{ id }}</h1>
-					<ButtonZitto @actionToExecute="openDialog = true">
-						Ver detalle
-					</ButtonZitto>
+	<v-container app>
+		<section class="order-container">
+			<v-progress-circular v-if="loading" indeterminate color="primary" />
+			<div v-else>
+				<NotFound
+					v-if="notFound"
+					text="¡Upps! Tuvimos un problema, consultá mas tarde"
+				/>
+				<div class="data-container" v-else>
+					<div class="header-pedido">
+						<h1>Pedido n# {{ id }}</h1>
+						<ButtonZitto @actionToExecute="openDialog = true">
+							Ver detalle
+						</ButtonZitto>
+					</div>
+					<v-timeline>
+						<v-timeline-item v-for="status in order.state" :key="status.name"
+							><div>
+								<h3>Pedido {{ status.name }}</h3>
+								<p>{{ status.date | dateFormat }}</p>
+							</div>
+						</v-timeline-item>
+					</v-timeline>
 				</div>
-				<v-timeline>
-					<v-timeline-item v-for="status in order.state" :key="status.name"
-						><div>
-							<h3>Pedido {{ status.name }}</h3>
-							<p>{{ status.date | dateFormat }}</p>
-						</div>
-					</v-timeline-item>
-				</v-timeline>
 			</div>
-		</div>
-		<DialogZitto :show="openDialog">
-			<CarritoTableView :data="detail" />
-			<ButtonZitto @actionToExecute="openDialog = false"> Cerrar </ButtonZitto>
-		</DialogZitto>
-	</section>
+			<DialogZitto :show="openDialog">
+				<CarritoTableView :data="detail" />
+				<ButtonZitto @actionToExecute="openDialog = false">
+					Cerrar
+				</ButtonZitto>
+			</DialogZitto>
+		</section>
+	</v-container>
 </template>
 
 <script>
@@ -74,6 +78,9 @@ export default {
 </script>
 
 <style scoped>
+.data-container {
+	margin: 1em;
+}
 .order-container {
 	height: 100%;
 	display: flex;
@@ -93,8 +100,9 @@ export default {
 	flex-direction: column;
 }
 
-.lala {
+.header-pedido {
 	display: flex;
 	justify-content: space-around;
+	gap: 0.5em;
 }
 </style>

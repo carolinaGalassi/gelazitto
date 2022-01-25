@@ -89,6 +89,17 @@ export default {
 				)
 				.then((response) => {
 					this.emptyCarrito();
+					axios.post("https://api.emailjs.com/api/v1.0/email/send", {
+						service_id: "service_zzc8nol",
+						template_id: "template_lmwer5c",
+						user_id: "user_KmWcnJHeavijxySiXPABM",
+						template_params: {
+							email: this.mail.toLowerCase(),
+							message: `Hola! Gracias por elegir Gelazito. Tu orden es la número ${response.data.id}.
+							Y podes seguir su estado en https://gelazitto.vercel.app/order/${response.data.id} .
+							En los proximos mails, te vamos a estar confirmando cuando esta listo para retirar o si ya fue enviado`,
+						},
+					});
 					this.dialog = { show: true, text: response.data.id };
 				})
 				.finally(() => (this.loading = false));
